@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Beer</title>
+</head>
+<h1 th:text="'Beer number '+${beer.getId()} "></h1>
+<body>
+    <table>
+        <caption>Information</caption>
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Style of beer</th>
+            <th>Original gravity</th>
+            <th>Alcohol volume</th>
+            <th>Buy price</th>
+            <th>Sell price</th>
+            <th>Remaining litres</th>
+            <th>Sales volume</th>
+            <th>Revenue</th>
+        </tr>
+        <tr>
+            <td> <p th:text="${beer.getId()}"> VALUE</p></td>
+            <td th:text="${beer.getBrand()}">VALUE</td>
+            <td th:text="${beer.getTypeBeer()}">VALUE</td>
+            <td th:text="${beer.getOriginalGravity()}">VALUE</td>
+            <td th:text="${beer.getAlcoholVolume()}">VALUE</td>
+            <td th:text="${beer.getBuyPrice()}">VALUE</td>
+            <td th:text="${beer.getCellPrice()}">VALUE</td>
+            <td th:text="${beer.getCurrentAmount()}">VALUE</td>
+            <td th:text="${beer.getSalesVolume()}">VALUE</td>
+            <td th:text="${beer.getRevenue()}">VALUE</td>
+        </tr>
+    </table>
+    <a href = "/beers">to main page</a>
+</body>
+</html>

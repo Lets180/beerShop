@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All beers</title>
+</head>
+<body>
+    <h1>Hello, beerman</h1>
+    <table>
+        <caption>Functions</caption>
+        <tr>
+            <th> <a href="/beers/new">Add new beer</a></th>
+        </tr>
+    </table>
+    <br/>
+    <hr/>
+    <br/>
+    <table>
+        <tr>
+            <th>Name of beer</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="beer: ${beers}">
+            <td><a th:href="@{/beers/{id} (id = ${beer.getId()})}" th:text="${beer.getBrand()}">beer</a></td>
+            <td><a th:href="@{/beers/{id}/edit (id = ${beer.getId()})}" th:text="Update">beer</a></td>
+            <td><form th:method="DELETE" th:action="@{/beers/{id}(id = ${beer.getId()})}">
+                <input type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+    </table>
+            <br/>
+
+</body>
+</html>
